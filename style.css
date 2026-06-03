@@ -13,10 +13,7 @@ body {
 h1 {
   color: gold;
   font-size: 52px;
-  text-shadow:
-    0 0 10px gold,
-    0 0 20px gold,
-    0 0 40px red;
+  text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 40px red;
 }
 
 p {
@@ -39,7 +36,7 @@ p {
   position: absolute;
   top: 0;
   left: 135px;
-  z-index: 3;
+  z-index: 5;
 }
 
 .wheel {
@@ -50,7 +47,6 @@ p {
   bottom: 0;
   left: 0;
   border: 12px solid gold;
-
   background: conic-gradient(
     red 0deg 60deg,
     black 60deg 120deg,
@@ -59,9 +55,7 @@ p {
     black 240deg 300deg,
     gold 300deg 360deg
   );
-
   box-shadow: 0 0 30px gold;
-  animation: spin 5s ease-in-out infinite;
 }
 
 .wheel::before {
@@ -72,7 +66,6 @@ p {
   width: 336px;
   height: 336px;
   border-radius: 50%;
-
   background:
     radial-gradient(circle at 50% 0%, white 0 5px, transparent 6px),
     radial-gradient(circle at 75% 7%, white 0 5px, transparent 6px),
@@ -86,7 +79,6 @@ p {
     radial-gradient(circle at 0% 50%, white 0 5px, transparent 6px),
     radial-gradient(circle at 7% 25%, white 0 5px, transparent 6px),
     radial-gradient(circle at 25% 7%, white 0 5px, transparent 6px);
-
   animation: flashLights 0.6s infinite alternate;
   pointer-events: none;
 }
@@ -94,42 +86,22 @@ p {
 .prize {
   position: absolute;
   width: 90px;
+  height: 30px;
   font-size: 12px;
   font-weight: bold;
   color: white;
   text-shadow: 1px 1px 3px black;
   z-index: 2;
+  text-align: center;
+  line-height: 30px;
 }
 
-.p1 {
-  top: 35px;
-  left: 105px;
-}
-
-.p2 {
-  top: 80px;
-  right: 25px;
-}
-
-.p3 {
-  bottom: 80px;
-  right: 25px;
-}
-
-.p4 {
-  bottom: 35px;
-  left: 105px;
-}
-
-.p5 {
-  bottom: 80px;
-  left: 25px;
-}
-
-.p6 {
-  top: 80px;
-  left: 25px;
-}
+.p1 { top: 30px; left: 105px; }
+.p2 { top: 80px; right: 25px; transform: rotate(60deg); }
+.p3 { bottom: 80px; right: 25px; transform: rotate(120deg); }
+.p4 { bottom: 30px; left: 105px; transform: rotate(180deg); }
+.p5 { bottom: 80px; left: 25px; transform: rotate(240deg); }
+.p6 { top: 80px; left: 25px; transform: rotate(300deg); }
 
 .center {
   width: 90px;
@@ -137,13 +109,18 @@ p {
   background: white;
   color: black;
   border-radius: 50%;
-  line-height: 90px;
   font-weight: bold;
   position: absolute;
   top: 105px;
   left: 105px;
   border: 5px solid gold;
-  z-index: 2;
+  z-index: 3;
+  cursor: pointer;
+}
+
+#result {
+  color: gold;
+  margin-top: 20px;
 }
 
 .rewards {
@@ -186,28 +163,12 @@ button:hover {
   background: white;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  70% {
-    transform: rotate(720deg);
-  }
-
-  100% {
-    transform: rotate(760deg);
-  }
-}
-
 @keyframes flashLights {
   from {
-    filter: drop-shadow(0 0 5px gold)
-            drop-shadow(0 0 10px gold);
+    filter: drop-shadow(0 0 5px gold) drop-shadow(0 0 10px gold);
   }
 
   to {
-    filter: drop-shadow(0 0 15px yellow)
-            drop-shadow(0 0 30px gold);
+    filter: drop-shadow(0 0 15px yellow) drop-shadow(0 0 30px gold);
   }
 }
