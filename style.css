@@ -16,6 +16,41 @@ h1 {
   text-shadow: 0 0 10px gold, 0 0 25px red, 0 0 40px orange;
 }
 
+.home-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.nav-card {
+  width: 260px;
+  background: #111;
+  border: 3px solid gold;
+  border-radius: 20px;
+  padding: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 20px gold;
+}
+
+.nav-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 35px gold;
+  background: #1a1a1a;
+}
+
+.nav-card h2 {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.nav-card p {
+  font-size: 15px;
+}
+
 .ad-banner {
   background: linear-gradient(90deg, #ff0000, #ffd700, #ff0000);
   color: black;
