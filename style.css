@@ -1,19 +1,33 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: radial-gradient(circle, #3b0000, #050505);
+  background: radial-gradient(circle, #4b0000, #050505);
   color: white;
   text-align: center;
 }
 
 .casino-container {
-  padding: 50px 20px;
+  padding: 35px 20px;
 }
 
 h1 {
-  color: gold;
+  color: #ffd700;
   font-size: 52px;
-  text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 40px red;
+  text-shadow: 0 0 10px gold, 0 0 25px red, 0 0 40px orange;
+}
+
+.ad-banner {
+  background: linear-gradient(90deg, #ff0000, #ffd700, #ff0000);
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 15px;
+  border: 4px solid white;
+  border-radius: 15px;
+  max-width: 750px;
+  margin: 20px auto;
+  box-shadow: 0 0 25px gold;
+  animation: glowAd 1s infinite alternate;
 }
 
 p {
@@ -22,105 +36,128 @@ p {
 
 .wheel-area {
   position: relative;
-  width: 320px;
-  height: 360px;
-  margin: 40px auto;
+  width: 340px;
+  height: 390px;
+  margin: 35px auto;
 }
 
-.hook {
+.pointer {
   width: 0;
   height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-top: 50px solid gold;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  border-top: 55px solid #ffd700;
   position: absolute;
   top: 0;
-  left: 135px;
-  z-index: 5;
+  left: 142px;
+  z-index: 10;
+  filter: drop-shadow(0 0 10px gold);
 }
 
 .wheel {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   position: absolute;
   bottom: 0;
   left: 0;
-  border: 12px solid gold;
+  border: 10px solid #ffd700;
   background: conic-gradient(
-    red 0deg 60deg,
-    black 60deg 120deg,
-    gold 120deg 180deg,
-    red 180deg 240deg,
-    black 240deg 300deg,
-    gold 300deg 360deg
+    #ff0000 0deg 60deg,
+    #000000 60deg 120deg,
+    #00c3ff 120deg 180deg,
+    #ff00ff 180deg 240deg,
+    #00ff66 240deg 300deg,
+    #ff9900 300deg 360deg
   );
-  box-shadow: 0 0 30px gold;
+  box-shadow: 0 0 40px gold;
+  overflow: hidden;
 }
 
 .wheel::before {
   content: "";
   position: absolute;
-  top: -18px;
-  left: -18px;
-  width: 336px;
-  height: 336px;
+  inset: -2px;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 50% 0%, white 0 5px, transparent 6px),
-    radial-gradient(circle at 75% 7%, white 0 5px, transparent 6px),
-    radial-gradient(circle at 93% 25%, white 0 5px, transparent 6px),
-    radial-gradient(circle at 100% 50%, white 0 5px, transparent 6px),
-    radial-gradient(circle at 93% 75%, white 0 5px, transparent 6px),
-    radial-gradient(circle at 75% 93%, white 0 5px, transparent 6px),
-    radial-gradient(circle at 50% 100%, white 0 5px, transparent 6px),
-    radial-gradient(circle at 25% 93%, white 0 5px, transparent 6px),
-    radial-gradient(circle at 7% 75%, white 0 5px, transparent 6px),
-    radial-gradient(circle at 0% 50%, white 0 5px, transparent 6px),
-    radial-gradient(circle at 7% 25%, white 0 5px, transparent 6px),
-    radial-gradient(circle at 25% 7%, white 0 5px, transparent 6px);
-  animation: flashLights 0.6s infinite alternate;
+    radial-gradient(circle at 50% 3%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 75% 10%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 92% 28%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 97% 50%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 92% 72%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 75% 90%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 50% 97%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 25% 90%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 8% 72%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 3% 50%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 8% 28%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 25% 10%, white 0 5px, transparent 6px);
+  animation: lights 0.6s infinite alternate;
   pointer-events: none;
+  z-index: 1;
 }
 
-.prize {
+.label {
   position: absolute;
-  width: 90px;
-  height: 30px;
-  font-size: 12px;
-  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 28px;
+  margin-left: -60px;
+  margin-top: -14px;
   color: white;
-  text-shadow: 1px 1px 3px black;
-  z-index: 2;
+  font-size: 13px;
+  font-weight: bold;
   text-align: center;
-  line-height: 30px;
+  line-height: 28px;
+  text-shadow: 2px 2px 5px black;
+  z-index: 3;
 }
 
-.p1 { top: 30px; left: 105px; }
-.p2 { top: 80px; right: 25px; transform: rotate(60deg); }
-.p3 { bottom: 80px; right: 25px; transform: rotate(120deg); }
-.p4 { bottom: 30px; left: 105px; transform: rotate(180deg); }
-.p5 { bottom: 80px; left: 25px; transform: rotate(240deg); }
-.p6 { top: 80px; left: 25px; transform: rotate(300deg); }
+.label1 {
+  transform: rotate(30deg) translateY(-105px) rotate(-30deg);
+}
 
-.center {
-  width: 90px;
-  height: 90px;
+.label2 {
+  transform: rotate(90deg) translateY(-105px) rotate(-90deg);
+}
+
+.label3 {
+  transform: rotate(150deg) translateY(-105px) rotate(-150deg);
+}
+
+.label4 {
+  transform: rotate(210deg) translateY(-105px) rotate(-210deg);
+}
+
+.label5 {
+  transform: rotate(270deg) translateY(-105px) rotate(-270deg);
+}
+
+.label6 {
+  transform: rotate(330deg) translateY(-105px) rotate(-330deg);
+}
+
+.spin-center {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
   background: white;
   color: black;
-  border-radius: 50%;
+  border: 6px solid gold;
+  font-size: 18px;
   font-weight: bold;
   position: absolute;
-  top: 105px;
-  left: 105px;
-  border: 5px solid gold;
-  z-index: 3;
+  top: 112px;
+  left: 112px;
+  z-index: 5;
   cursor: pointer;
+  padding: 0;
 }
 
 #result {
   color: gold;
-  margin-top: 20px;
+  text-shadow: 0 0 10px red;
 }
 
 .rewards {
@@ -128,16 +165,16 @@ p {
   justify-content: center;
   gap: 25px;
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .reward-card {
+  width: 240px;
+  padding: 20px;
   background: #111;
   border: 3px solid gold;
   border-radius: 20px;
-  width: 230px;
-  padding: 20px;
-  box-shadow: 0 0 20px gold;
+  box-shadow: 0 0 25px gold;
 }
 
 .reward-card h2 {
@@ -145,17 +182,17 @@ p {
 }
 
 .reward-card p {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 button {
   background: gold;
   color: black;
   border: none;
-  padding: 15px 25px;
-  font-size: 16px;
+  padding: 14px 22px;
+  font-size: 15px;
   font-weight: bold;
-  border-radius: 30px;
+  border-radius: 25px;
   cursor: pointer;
 }
 
@@ -163,12 +200,22 @@ button:hover {
   background: white;
 }
 
-@keyframes flashLights {
+@keyframes lights {
   from {
-    filter: drop-shadow(0 0 5px gold) drop-shadow(0 0 10px gold);
+    filter: drop-shadow(0 0 5px gold);
   }
 
   to {
-    filter: drop-shadow(0 0 15px yellow) drop-shadow(0 0 30px gold);
+    filter: drop-shadow(0 0 18px yellow);
+  }
+}
+
+@keyframes glowAd {
+  from {
+    box-shadow: 0 0 15px gold;
+  }
+
+  to {
+    box-shadow: 0 0 35px yellow;
   }
 }
