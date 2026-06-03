@@ -12,9 +12,9 @@ const prizes = [
   "FREE SPIN",
   "FREE BET",
   "$5 BET",
-  "TRY AGAIN",
+  "BONUS",
   "$10 BET",
-  "BONUS"
+  "TRY AGAIN"
 ];
 
 let spinning = false;
@@ -52,17 +52,18 @@ function spinWheel() {
   spinning = true;
   result.textContent = "Spinning...";
 
-  const randomPrize = Math.floor(Math.random() * prizes.length);
-  const extraRotation = 1800;
-  const prizeRotation = randomPrize * 60;
+  const randomIndex = Math.floor(Math.random() * prizes.length);
+  const sectionAngle = 60;
+  const stopAngle = 360 - randomIndex * sectionAngle - 30;
+  const fullSpins = 360 * 6;
 
-  currentRotation += extraRotation + prizeRotation;
+  currentRotation += fullSpins + stopAngle;
 
   wheel.style.transition = "transform 4s ease-out";
-  wheel.style.transform = `rotate(${currentRotation}deg)`;
+  wheel.style.transform = "rotate(" + currentRotation + "deg)";
 
   setTimeout(function () {
-    const prize = prizes[randomPrize];
+    const prize = prizes[randomIndex];
 
     if (prize === "FREE SPIN") {
       freeSpins++;
