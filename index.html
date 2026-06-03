@@ -15,31 +15,35 @@
     <div class="wheel-area">
       <div class="hook"></div>
 
-      <div class="wheel">
+      <div class="wheel" id="wheel">
         <div class="prize p1">FREE SPIN</div>
         <div class="prize p2">FREE BET</div>
         <div class="prize p3">$5 BET</div>
         <div class="prize p4">TRY AGAIN</div>
         <div class="prize p5">$10 BET</div>
         <div class="prize p6">BONUS</div>
-        <div class="center">SPIN</div>
+
+        <button class="center" id="spinBtn">SPIN</button>
       </div>
     </div>
 
+    <h2 id="result">Click SPIN to play!</h2>
+
     <div class="rewards">
       <div class="reward-card">
-        <h2>🎡 Free Spin</h2>
-        <p>Use this to spin the wheel one extra time.</p>
-        <button>Use Free Spin</button>
+        <h2>🎡 Free Spins</h2>
+        <p id="freeSpinCount">You have 0 free spins.</p>
+        <button id="useSpinBtn">Use Free Spin</button>
       </div>
 
       <div class="reward-card">
-        <h2>🎁 Free Bet</h2>
-        <p>Use this bonus bet on your next game.</p>
-        <button>Use Free Bet</button>
+        <h2>🎁 Free Bets</h2>
+        <p id="freeBetCount">You have 0 free bets.</p>
+        <button id="useBetBtn">Use Free Bet</button>
       </div>
     </div>
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
