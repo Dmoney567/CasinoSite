@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle, #3b0000, #050505);
+  color: white;
+  text-align: center;
+}
+
+.casino-container {
+  padding: 50px 20px;
+}
+
+h1 {
+  color: gold;
+  font-size: 52px;
+  text-shadow:
+    0 0 10px gold,
+    0 0 20px gold,
+    0 0 40px red;
+}
+
+p {
+  font-size: 20px;
+}
+
+.wheel-area {
+  position: relative;
+  width: 320px;
+  height: 360px;
+  margin: 40px auto;
+}
+
+.hook {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 50px solid gold;
+  position: absolute;
+  top: 0;
+  left: 135px;
+  z-index: 3;
+}
+
+.wheel {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 12px solid gold;
+
+  background: conic-gradient(
+    red 0deg 60deg,
+    black 60deg 120deg,
+    gold 120deg 180deg,
+    red 180deg 240deg,
+    black 240deg 300deg,
+    gold 300deg 360deg
+  );
+
+  box-shadow: 0 0 30px gold;
+  animation: spin 5s ease-in-out infinite;
+}
+
+.wheel::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  width: 336px;
+  height: 336px;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle at 50% 0%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 75% 7%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 93% 25%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 100% 50%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 93% 75%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 75% 93%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 50% 100%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 25% 93%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 7% 75%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 0% 50%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 7% 25%, white 0 5px, transparent 6px),
+    radial-gradient(circle at 25% 7%, white 0 5px, transparent 6px);
+
+  animation: flashLights 0.6s infinite alternate;
+  pointer-events: none;
+}
+
+.prize {
+  position: absolute;
+  width: 90px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  z-index: 2;
+}
+
+.p1 {
+  top: 35px;
+  left: 105px;
+}
+
+.p2 {
+  top: 80px;
+  right: 25px;
+}
+
+.p3 {
+  bottom: 80px;
+  right: 25px;
+}
+
+.p4 {
+  bottom: 35px;
+  left: 105px;
+}
+
+.p5 {
+  bottom: 80px;
+  left: 25px;
+}
+
+.p6 {
+  top: 80px;
+  left: 25px;
+}
+
+.center {
+  width: 90px;
+  height: 90px;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  line-height: 90px;
+  font-weight: bold;
+  position: absolute;
+  top: 105px;
+  left: 105px;
+  border: 5px solid gold;
+  z-index: 2;
+}
+
+.rewards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.reward-card {
+  background: #111;
+  border: 3px solid gold;
+  border-radius: 20px;
+  width: 230px;
+  padding: 20px;
+  box-shadow: 0 0 20px gold;
+}
+
+.reward-card h2 {
+  color: gold;
+}
+
+.reward-card p {
+  font-size: 15px;
+}
+
+button {
+  background: gold;
+  color: black;
+  border: none;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: white;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  70% {
+    transform: rotate(720deg);
+  }
+
+  100% {
+    transform: rotate(760deg);
+  }
+}
+
+@keyframes flashLights {
+  from {
+    filter: drop-shadow(0 0 5px gold)
+            drop-shadow(0 0 10px gold);
+  }
+
+  to {
+    filter: drop-shadow(0 0 15px yellow)
+            drop-shadow(0 0 30px gold);
+  }
+}
